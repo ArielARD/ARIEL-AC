@@ -1,0 +1,662 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.pcduino.MainActivity" >
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="6" >
+
+        <Button
+            android:id="@+id/Connect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_row="0"
+            android:layout_weight="0.5"
+            android:onClick="Connect"
+            android:text="Connect" />
+
+        <Button
+            android:id="@+id/disConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.5"
+            android:onClick="disConnect"
+            android:text="disConnect" />
+
+        <Button
+            android:id="@+id/playLed"
+            android:layout_width="107dp"
+            android:layout_height="match_parent"
+            android:layout_column="2"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:onClick="playLed"
+            android:text="play Led" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="184dp"
+            android:layout_height="match_parent"
+            android:layout_column="3"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:onClick="clear"
+            android:text="Clear Emergency"
+            android:textColor="#0000FF" />
+
+        <Button
+            android:id="@+id/setEmer"
+            android:layout_column="4"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:onClick="setEmer"
+            android:textColor="#ff0000"
+            android:text="** Emergency **" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="3" >
+
+        <ToggleButton
+            android:id="@+id/OnOffData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.01"
+            android:onClick="OnOffData"
+            android:text="ToggleButton" />
+
+        <TextView
+            android:id="@+id/textData"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column="0"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.04"
+            android:text="Click For Data:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="122dp"
+            android:columnCount="3" >
+
+            <Button
+                android:id="@+id/Up"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_row="0"
+                android:onClick="up"
+                android:text="Up" />
+
+            <Button
+                android:id="@+id/Right"
+                android:layout_column="2"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:onClick="right"
+                android:text="Right" />
+
+            <Button
+                android:id="@+id/Left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:layout_weight="0.54"
+                android:onClick="left"
+                android:text="Left" />
+
+            <Button
+                android:id="@+id/Down"
+                android:layout_column="1"
+                android:layout_gravity="left|bottom"
+                android:layout_row="0"
+                android:onClick="down"
+                android:text="Down" />
+
+            <TextView
+                android:id="@+id/MoveText"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_row="0"
+                android:text="Move"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="20sp" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="98dp"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:layout_weight="0.19"
+            android:columnCount="1" >
+
+            <Button
+                android:id="@+id/takeOff"
+                android:layout_width="247dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_row="0"
+                android:layout_weight="0.54"
+                android:onClick="takeOff"
+                android:text="takeOff" />
+
+            <Button
+                android:id="@+id/Land"
+                android:layout_width="204dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_row="0"
+                android:layout_weight="0.54"
+                android:onClick="Land"
+                android:text="Land" />
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="122dp"
+            android:columnCount="4" >
+
+            <Button
+                android:id="@+id/upPit"
+                android:layout_column="1"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_row="0"
+                android:onClick="upPit"
+                android:text="up" />
+
+            <Button
+                android:id="@+id/LeftYaw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:layout_weight="0.54"
+                android:onClick="leftYaw"
+                android:text="left" />
+
+            <Button
+                android:id="@+id/DownPit"
+                android:layout_column="1"
+                android:layout_gravity="left|bottom"
+                android:layout_row="0"
+                android:onClick="downPit"
+                android:text="down" />
+
+            <Button
+                android:id="@+id/RightYaw"
+                android:layout_column="3"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:onClick="rightYaw"
+                android:text="right" />
+
+            <TextView
+                android:id="@+id/YawPitch"
+                android:layout_width="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:text="Yaw | Pitch"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textSize="16sp" />
+
+        </GridLayout>
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="11" >
+
+        <EditText
+            android:id="@+id/SetDis1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setDis1"
+            android:text="4" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/MaxErorr1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="6"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Errors:   "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/SetMaxErorr1"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="7"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setMaxErorr1"
+            android:text="5" />
+
+        <EditText
+            android:id="@+id/SetMaxTime1"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_column="9"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setMaxTime1"
+            android:text="3000" />
+
+        <TextView
+            android:id="@+id/MaxTime1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="8"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Time:  "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/enterDis1Text"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.00"
+            android:text="Distance:                    "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/sensor1Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.04"
+            android:text="Sensor 1:   "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/Distance1"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.59"
+            android:text="NULL"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="11" >
+
+        <EditText
+            android:id="@+id/SetDis2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setDis2"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/MaxErorr2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="6"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Errors:   "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/SetMaxErorr2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="7"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setMaxErorr2"
+            android:text="5" />
+
+        <EditText
+            android:id="@+id/SetMaxTime2"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_column="9"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setMaxTime2"
+            android:text="3000" />
+
+        <TextView
+            android:id="@+id/MaxTime2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="8"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Time:  "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/enterDis2Text"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.00"
+            android:text="Distance:                    "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/sensor2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.04"
+            android:text="Sensor 2:   "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.59"
+            android:text="NULL"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="11" >
+
+        <EditText
+            android:id="@+id/SetDis3"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="5"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setDis3"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/MaxErorr3Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="6"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Errors:   "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/SetMaxErorr3"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_column="7"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="SetMaxErorr3"
+            android:text="5" />
+
+        <EditText
+            android:id="@+id/SetMaxTime3"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_column="9"
+            android:layout_gravity="left|top"
+            android:layout_row="0"
+            android:layout_weight="0.02"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:onClick="setMaxTime3"
+            android:text="3000" />
+
+        <TextView
+            android:id="@+id/MaxTime3Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="8"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.03"
+            android:text="Maximum Time:  "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/enterDis3Text"
+            android:layout_width="81dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.00"
+            android:text="Distance:                    "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/sensor3Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.04"
+            android:text="Sensor 3:   "
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/TextView07"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="left|center_vertical"
+            android:layout_row="0"
+            android:layout_weight="0.59"
+            android:text="NULL"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="842dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="9" >
+
+            <TextView
+                android:id="@+id/rollText"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:text="roll:       "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/roll"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:layout_weight="0.01"
+                android:onClick="roll"
+                android:text="NULL"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/BatText"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_column="6"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginLeft="30dp"
+                android:layout_row="0"
+                android:text="Battery: "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/Battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:layout_weight="0.73"
+                android:onClick="Battery"
+                android:text="NULL"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="6" >
+
+            <TextView
+                android:id="@+id/Textpitch"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:text="pitch:    "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/pitch"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="0"
+                android:layout_weight="0.73"
+                android:onClick="pitch"
+                android:text="NULL"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="7" >
+
+            <TextView
+                android:id="@+id/YawText"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="1"
+                android:text="Yaw:      "
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/Yaw"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="left|center_vertical"
+                android:layout_row="1"
+                android:layout_weight="0.73"
+                android:onClick="Yaw"
+                android:text="NULL"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2" >
+        </GridLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
